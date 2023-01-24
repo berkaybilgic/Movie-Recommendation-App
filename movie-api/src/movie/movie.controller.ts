@@ -22,7 +22,7 @@ export class MovieController {
         return this.movieService.getMovie(pageParams);
     }
 
-    @Put("tovote")
+    @Put("to-vote")
     @ApiBody({ type: VoteRateDto })
     @UseGuards(AuthorizationGuard)
     @UsePipes(new ValidationPipe({ transform: true }))

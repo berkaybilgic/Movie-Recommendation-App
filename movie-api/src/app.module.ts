@@ -6,10 +6,11 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 
 @Module({
-  imports: [AuthorizationModule,
+  imports: [
+    MongooseModule.forRoot('mongodb://mongo:27017/movie'),
     ConfigModule.forRoot({envFilePath: '.config.env', isGlobal: true,}),
+    AuthorizationModule,
     MovieModule,
-    MongooseModule.forRoot('mongodb://mongo:27017/movie')
   ],
 })
 export class AppModule { }

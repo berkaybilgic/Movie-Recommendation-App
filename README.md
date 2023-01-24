@@ -69,3 +69,6 @@ In directory that contains docker-compose.yaml;
 - AUTH0_JWKSURI
 - AUTH0_AUDIENCE
 - AUTH0_ISSUER
+- AUTH0_CLIENT_ID
+- AUTH0_CLIENT_SECRET
+- AUTH0_TOKEN_URL
