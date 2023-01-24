@@ -1,4 +1,4 @@
-# Movie Recommendation System
+# Movie Recommendation App
 
 ## Architecture
 
