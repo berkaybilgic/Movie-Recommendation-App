@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: movie-mongo
+    ports:
+      - "27017:27017"
+
+  movie-agenda-job:
+    build:
+      context: "./agenda-job"
+    depends_on:
+      - "mongo"
+    ports:
+      - "3001:3001"
+    links:
+      - "mongo"
+
+  movie-api:
+    build:
+      context: "./movie-api"
+    depends_on:
+      - "mongo"
+    ports:
+      - "3000:3000"
+    links:
+      - "mongo"
+  
+  agenda-dashboard:
+    build:
+      context: "./agenda-dashboard"
+    depends_on:
+      - "mongo"
+    ports:
+      - "8080:8080"
+    links:
+      - "mongo"
